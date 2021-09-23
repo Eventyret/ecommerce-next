@@ -7,6 +7,6 @@ type ReturnType = {
 };
 const getAllProducts = async (): Promise<any> => {
   const { data } = await fetchAPI<ReturnType>({ query: getAllProductsQuery });
-  return data;
+  return data.products;
 };
 export default getAllProducts;
