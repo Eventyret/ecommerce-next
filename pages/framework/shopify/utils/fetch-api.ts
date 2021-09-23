@@ -1,8 +1,8 @@
 type FetchAPIParms = {
   query: string;
 };
-
-const fetchAPI = async ({ query }: FetchAPIParms) => {
+type FetchAPIResult<T> = { data: T };
+const fetchAPI = async <T>({ query }: FetchAPIParms): Promise<FetchAPIResult<T>> => {
   const url = `http://localhost:4000/graphql`;
   const response = await fetch(url, {
     method: 'POST',
@@ -11,7 +11,8 @@ const fetchAPI = async ({ query }: FetchAPIParms) => {
     },
     body: JSON.stringify({ query }),
   });
-  const data = await response.json();
+  const { data, errors } = await response.json();
+  if (errors) throw new Error(errors[0].message ?? errors.message);
   return { data };
 };
 
