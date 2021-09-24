@@ -1,4 +1,4 @@
-import { Product } from '../../common/types/product';
+import { Product } from 'framework/common/types/product';
 import { ImageEdge, Product as ShopifyProduct } from '../schema';
 
 export function normalizeProduct(productNode: ShopifyProduct): Product {
