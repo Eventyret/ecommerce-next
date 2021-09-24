@@ -5,8 +5,8 @@ module.exports = withFrameworkConfig({
     name: 'shopify-local',
   },
   i18n: {
-    locales: ['en-GB', 'en-US', 'es'],
-    defaultLocale: 'en-GB',
+    locales: ['en-US', 'es'],
+    defaultLocale: 'en-US',
   },
   reactStrictMode: true,
 });
