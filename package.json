@@ -17,6 +17,7 @@
   "devDependencies": {
     "deepmerge": "^4.2.2",
     "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2"
+    "eslint-config-next": "11.1.2",
+    "prettier": "^2.4.1"
   }
 }
