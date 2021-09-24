@@ -1,4 +1,6 @@
 .root {
-  @apply h-full mx-auto;
+  @apply h-full mx-auto bg-primary;
   max-width: 2460px;
+  background-color: theme('colors.green');
+  color: theme('textColor.base');
 }
