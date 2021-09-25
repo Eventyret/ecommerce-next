@@ -39,7 +39,7 @@ export const getStaticProps = async ({
 export default function ProductSlug({
   product,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  return <>{product && <ProductView product={product} />}</>;
+  return <Layout>{product && <ProductView product={product} />}</Layout>;
 }
 
 ProductSlug.layout = Layout;
