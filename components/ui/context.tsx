@@ -12,9 +12,7 @@ export const UIProvider: FC<ReactNode> = ({ children }) => {
   };
   return (
     <>
-      <UIContext.Provider value={{ uiState: uiState }}>
-        {children}
-      </UIContext.Provider>
+      <UIContext.Provider value={uiState}>{children}</UIContext.Provider>
     </>
   );
 };
