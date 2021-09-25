@@ -14,7 +14,19 @@ const ProductCard: FC<Props> = ({ product, variant = 'simple' }) => {
     <Link href={`/product/${product.slug}`}>
       <a className={s.root}>
         {variant === 'slim' ? (
-          <>Slim Product</>
+          <>
+            <div></div>
+
+            <Image
+              className={s.productImage}
+              src={product.images[0].url ?? placeHolderImage}
+              alt={product.name ?? 'Product Image'}
+              height={320}
+              width={320}
+              quality="85"
+              layout="fixed"
+            />
+          </>
         ) : (
           <>
             <div className={s.productBg}></div>
