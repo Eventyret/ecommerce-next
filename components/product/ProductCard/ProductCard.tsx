@@ -19,7 +19,7 @@ const ProductCard: FC<Props> = ({ product }) => {
         </div>
         {product.images && (
           <Image
-            src={placeHolderImage}
+            src={product.images[0].url ?? placeHolderImage}
             alt={product.name ?? 'Product Image'}
             height={540}
             width={540}
