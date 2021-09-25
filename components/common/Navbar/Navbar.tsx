@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { Container } from '@components/ui';
 import Link from 'next/link';
 import s from './Navbar.module.css';
+import { Usernav } from '@components/common';
 const Navbar: FC = () => {
   return (
     <Container>
@@ -24,6 +25,7 @@ const Navbar: FC = () => {
               <a className={s.link}>Shoes</a>
             </Link>
           </nav>
+          <Usernav />
         </div>
       </div>
     </Container>

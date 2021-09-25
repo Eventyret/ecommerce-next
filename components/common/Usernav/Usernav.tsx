@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import s from './Usernav.module.css';
 import Link from 'next/link';
-const UserNav: FC<{}> = () => {
+const Usernav: FC<{}> = () => {
   return (
     <nav>
       <ul className={s.list}>
@@ -16,4 +16,4 @@ const UserNav: FC<{}> = () => {
   );
 };
 
-export default UserNav;
+export default Usernav;
