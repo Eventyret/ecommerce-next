@@ -5,6 +5,7 @@ import {
   Product as ShopifyProduct,
   ProductOption,
   ProductVariantConnection,
+  SelectedOption,
 } from '../schema';
 
 export function normalizeProduct(productNode: ShopifyProduct): Product {
@@ -82,10 +83,14 @@ const normalizeProductVariants = ({ edges }: ProductVariantConnection) => {
     return {
       id,
       name: title,
-      sku: sku ?? id,
+      sku: sku || id,
       price: +priceV2.amount,
       listPrice: +compareAtPriceV2?.amount,
       requiresShipping: true,
+      options: selectedOptions.map(({ name, value }: SelectedOption) => {
+        const option = normalizeProductOption({ id, name, values: [value] });
+        return option;
+      }),
     };
   });
 };
