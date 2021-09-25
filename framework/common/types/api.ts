@@ -5,6 +5,7 @@ export type ApiFetchResults<T> = {
 export type ApiFetchOptions = {
   url: string;
   query: string;
+  variables?: any;
 };
 
 export interface ApiConfig {
