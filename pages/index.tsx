@@ -2,7 +2,7 @@ import { Footer, Layout } from '@components/common';
 import { ProductCard } from '@components/product';
 import { Grid, Hero, Marquee } from '@components/ui';
 import { getConfig } from '@framework/api/config';
-import getAllProducts from 'framework/shopify/product/get-all-products';
+import { getAllProducts } from '@framework/product';
 import type { InferGetStaticPropsType } from 'next';
 
 export async function getStaticProps() {
