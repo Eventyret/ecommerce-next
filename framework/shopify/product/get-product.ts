@@ -1,9 +1,9 @@
-import { ApiConfig } from '@common/types/api';
+import { ApiConfig, Variables } from '@common/types/api';
 import { getProductQuery } from '@framework/utils';
 
 const getProduct = async (options: {
   config: ApiConfig;
-  variables: any;
+  variables: Variables;
 }): Promise<any> => {
   const { config, variables } = options;
   const { data } = await config.fetch<any>({
