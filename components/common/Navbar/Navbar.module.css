@@ -1,0 +1,9 @@
+.root {
+  @apply flex flex-row md:py-6;
+}
+
+.link {
+}
+
+.logo {
+}
