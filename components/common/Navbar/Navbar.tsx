@@ -25,7 +25,9 @@ const Navbar: FC = () => {
               <a className={s.link}>Shoes</a>
             </Link>
           </nav>
-          <Usernav />
+          <div className="flex justify-end flex-1 space-x-8">
+            <Usernav />
+          </div>
         </div>
       </div>
     </Container>
