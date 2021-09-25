@@ -5,7 +5,7 @@ interface Props {
 }
 
 const Sidebar: FC<Props> = ({ children }) => {
-  const isOpen = true;
+  const isOpen = false;
   return (
     <>
       {isOpen ? (
