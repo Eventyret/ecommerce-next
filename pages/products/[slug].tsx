@@ -1,5 +1,10 @@
 import { Layout } from '@components/common';
-import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
+import {
+  GetStaticPaths,
+  GetStaticProps,
+  GetStaticPropsContext,
+  InferGetStaticPropsType,
+} from 'next';
 
 // Fetch all of the products slugs
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -25,8 +30,10 @@ export const getStaticProps = async ({
   };
 };
 
-export default function ProductSlug() {
-  return <div>Hello World</div>;
+export default function ProductSlug({
+  product,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
+  return <div>{product.slug}</div>;
 }
 
 ProductSlug.layout = Layout;
