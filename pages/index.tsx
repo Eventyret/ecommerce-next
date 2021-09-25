@@ -3,6 +3,7 @@ import getAllProducts from 'framework/shopify/product/get-all-products';
 import type { InferGetStaticPropsType } from 'next';
 import { Layout } from '@components/common';
 import { ProductCard } from '@components/product';
+import { Grid } from '@components/ui';
 export async function getStaticProps() {
   const config = getConfig();
   const products = await getAllProducts(config);
@@ -14,13 +15,17 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ products }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Home({
+  products,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <div className='root'>
-      {products.slice(0, 3).map((product) => (
-        <ProductCard product={product} key={product.id} />
-      ))}
-    </div>
+    <>
+      <Grid>
+        {products.slice(0, 3).map((product) => (
+          <ProductCard product={product} key={product.id} />
+        ))}
+      </Grid>
+    </>
   );
 }
 
