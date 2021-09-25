@@ -24,7 +24,7 @@ export const getStaticProps = async ({
 
   const { product } = await getProduct({
     config,
-    variables: { slug: params!.slug },
+    variables: { slug: params?.slug },
   });
   return {
     props: {

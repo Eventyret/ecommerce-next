@@ -8,7 +8,7 @@ export type ApiFetchOptions = {
   variables?: Variables;
 };
 
-export type Variables = { [key: string]: string };
+export type Variables = { [key: string]: string | undefined };
 
 export interface ApiConfig {
   apiURL: string;
