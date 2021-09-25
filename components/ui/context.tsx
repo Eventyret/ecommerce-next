@@ -5,10 +5,10 @@ const UIContext = createContext<{ [key: string]: any }>({
 });
 
 export const UIProvider: FC<ReactNode> = ({ children }) => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
   const uiState = {
     isSidebarOpen,
-    setIsSidebarOpen,
+    setSidebarOpen,
   };
   return (
     <>
