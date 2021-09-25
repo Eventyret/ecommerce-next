@@ -4,6 +4,7 @@ import s from './ProductView.module.css';
 import { Container } from '@components/ui';
 import Image from 'next/image';
 import { Product } from '@common/types/product';
+import { ProductSlider } from '@components/product';
 
 interface Props {
   product: Product;
@@ -22,16 +23,20 @@ const ProductView: FC<Props> = ({ product }) => {
               {product.price.currencyCode}
             </div>
           </div>
-          <div className={s.imageContainer}>
-            <Image
-              className={s.img}
-              src={'/product-image-placeholder.svg'}
-              alt={'Product Image'}
-              width={1050}
-              height={1050}
-              quality="85"
-            />
-          </div>
+          <ProductSlider>
+            {product.images.map((image, i) => (
+              <div className={s.imageContainer} key={i}>
+                <Image
+                  className={s.img}
+                  src={image.url}
+                  alt={image.alt}
+                  width={1050}
+                  height={1050}
+                  quality="85"
+                />
+              </div>
+            ))}
+          </ProductSlider>
         </div>
         <div className={s.sidebar}>
           <section>
