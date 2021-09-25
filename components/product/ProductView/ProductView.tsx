@@ -15,10 +15,11 @@ const ProductView: FC<Props> = ({ product }) => {
       <div className={cn(s.root, 'fit')}>
         <div className={cn(s.productDisplay, 'fit')}>
           <div className={s.nameBox}>
-            <h1 className={s.name}>Product Name</h1>
+            <h1 className={s.name}>{product.name}</h1>
             <div className={s.price}>
-              50
-              {` `}$
+              {product.price.value}
+              {` `}
+              {product.price.currencyCode}
             </div>
           </div>
           <div className={s.imageContainer}>
@@ -39,7 +40,7 @@ const ProductView: FC<Props> = ({ product }) => {
               <div className="flex flex-row py-4">Variant Options Here!</div>
             </div>
             <div className="w-full max-w-xl text-lg break-words pb-14">
-              Product description...
+              {product.description}
             </div>
           </section>
           <div>
