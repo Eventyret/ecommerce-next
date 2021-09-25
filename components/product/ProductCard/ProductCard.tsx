@@ -15,7 +15,10 @@ const ProductCard: FC<Props> = ({ product }) => {
         <div className={s.productBg}></div>
         <div className={s.productTag}>
           <h3 className={s.productTitle}>
-            <span>{product.name}</span>
+            <span>
+              {product.name}
+              {product.price.value} {product.price.currencyCode}
+            </span>
           </h3>
           <span className={s.productPrice}>£ 14</span>
         </div>
