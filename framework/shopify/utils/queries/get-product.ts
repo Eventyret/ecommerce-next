@@ -1,5 +1,3 @@
-import { getProduct } from '@framework/product';
-
 const getProductQuery = `
 query productByHandle {
   productByHandle(handle: "cool-hat") {
@@ -66,4 +64,4 @@ query productByHandle {
   }
 }
 `;
-export default getProduct;
+export default getProductQuery;
