@@ -36,11 +36,7 @@ export const getStaticProps = async ({
 export default function ProductSlug({
   product,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  return (
-    <div>
-      {product.slug} {product.name}
-    </div>
-  );
+  return <div>{JSON.stringify(product, null, 2)}</div>;
 }
 
 ProductSlug.layout = Layout;
