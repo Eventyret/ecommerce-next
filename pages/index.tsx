@@ -1,4 +1,4 @@
-import { Layout } from '@components/common';
+import { Footer, Layout } from '@components/common';
 import { ProductCard } from '@components/product';
 import { Grid, Hero, Marquee } from '@components/ui';
 import { getConfig } from '@framework/api/config';
