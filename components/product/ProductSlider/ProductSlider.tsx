@@ -4,11 +4,12 @@ import cn from 'classnames';
 import { useKeenSlider } from 'keen-slider/react';
 
 const ProductSlider: FC = ({ children }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderRef, slider] = useKeenSlider({
     initial: 0,
     loop: true,
     slideChanged(s) {
-      s.details().relativeSlide;
+      setCurrentSlide(s.details().relativeSlide);
     },
   });
 
@@ -26,6 +27,7 @@ const ProductSlider: FC = ({ children }) => {
           onClick={slider?.next}
           className={cn(s.rightControl, s.control)}
         ></button>
+
         {Children.map(children, (child) => {
           if (isValidElement(child)) {
             return React.cloneElement(child, {
