@@ -24,7 +24,7 @@
 }
 
 .rightControl {
-  @apply bg-cover right-10 md:right-6;
+  @apply bg-cover right-12;
 
   background-image: url('public/cursor-right.png');
 }
