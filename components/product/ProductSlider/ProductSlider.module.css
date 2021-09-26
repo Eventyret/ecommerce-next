@@ -19,7 +19,7 @@
 }
 
 .leftControl {
-  @apply bg-cover left-10 md:left-6;
+  @apply bg-cover left-12;
   background-image: url('public/cursor-left.png');
 }
 
