@@ -6,15 +6,20 @@ interface Props {
   color?: string;
   label?: string;
   variant?: 'size' | 'color' | string;
+  onClick: () => void;
 }
-const Swatch: FC<Props> = ({ color, label, variant }) => {
+const Swatch: FC<Props> = ({ color, label, variant, ...rest }) => {
   label = label?.toLowerCase();
   variant = variant?.toLowerCase();
   return (
-    <button className={s.root} style={color ? { backgroundColor: color } : {}}>
-      <span>
+    <button
+      className={s.root}
+      style={color ? { backgroundColor: color } : {}}
+      {...rest}
+    >
+      {/* <span>
         <Check />
-      </span>
+      </span> */}
       {variant === 'size' ? label : null}
     </button>
   );
