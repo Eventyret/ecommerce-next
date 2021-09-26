@@ -13,7 +13,7 @@ interface Props {
 const ProductView: FC<Props> = ({ product }) => {
   return (
     <Container>
-      <div className={cn(s.root, 'fit')}>
+      <div className={cn(s.root, 'fit', 'mb-6')}>
         <div className={cn(s.productDisplay, 'fit')}>
           <div className={s.nameBox}>
             <h1 className={s.name}>{product.name}</h1>
