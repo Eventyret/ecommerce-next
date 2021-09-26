@@ -41,10 +41,19 @@ const ProductView: FC<Props> = ({ product }) => {
         </div>
         <div className={s.sidebar}>
           <section>
-            <div className="pb-4">
-              <h2 className="font-medium uppercase">Color</h2>
-              <div className="flex flex-row py-4">Variant Options Here!</div>
-            </div>
+            {product.options.map((option) => (
+              <div key={product.id} className="pb-4">
+                <h2 className="font-medium uppercase">{option.displayName}</h2>
+                <div className="flex flex-row py-4">
+                  {option.values.map((optValue) => (
+                    <div key={`${option.id}-${optValue.label}`}>
+                      {optValue.label}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+
             <div className="w-full max-w-xl text-lg break-words pb-14">
               {product.description}
             </div>
