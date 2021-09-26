@@ -10,9 +10,13 @@ import { Button } from '@components/ui';
 interface Props {
   product: Product;
 }
+type AvailableChoices = 'color' | 'size' | string;
+type Choices = {
+  [P in AvailableChoices]: string;
+};
 
 const ProductView: FC<Props> = ({ product }) => {
-  const [choices, setChoices] = useState({});
+  const [choices, setChoices] = useState<Choices>({});
   return (
     <Container>
       <div className={cn(s.root, 'fit', 'mb-6')}>
@@ -55,7 +59,8 @@ const ProductView: FC<Props> = ({ product }) => {
                       onClick={() => {
                         setChoices({
                           ...choices,
-                          [option.displayName]: optValue.label,
+                          [option.displayName.toLowerCase()]:
+                            optValue.label.toLowerCase(),
                         });
                       }}
                     />
