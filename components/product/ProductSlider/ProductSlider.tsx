@@ -14,7 +14,7 @@ const ProductSlider: FC = ({ children }) => {
   return (
     <div className={s.root}>
       <div
-        ref={sliderRef as any}
+        ref={sliderRef as React.RefObject<HTMLDivElement>}
         className="h-full transition-opacity keen-slider"
       >
         {Children.map(children, (child) => {
