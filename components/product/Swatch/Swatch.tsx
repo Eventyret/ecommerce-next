@@ -7,8 +7,8 @@ const Swatch: FC<Props> = ({ color, label }) => {
   label = label?.toLowerCase();
   return (
     <>
-      Color: {color}
-      Label: {label}
+      {color && <>Color: {color}</>}
+      Label: {label} {` , `}
     </>
   );
 };
