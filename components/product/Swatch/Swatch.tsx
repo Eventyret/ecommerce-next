@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import s from './Swatch.module.css';
+import { Check } from '@components/icons';
 
 interface Props {
   color?: string;
@@ -11,6 +12,9 @@ const Swatch: FC<Props> = ({ color, label, variant }) => {
   variant = variant?.toLowerCase();
   return (
     <button className={s.root} style={color ? { backgroundColor: color } : {}}>
+      <span>
+        <Check />
+      </span>
       {variant === 'size' ? label : null}
     </button>
   );
