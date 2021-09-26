@@ -42,7 +42,7 @@ const ProductView: FC<Props> = ({ product }) => {
         <div className={s.sidebar}>
           <section>
             {product.options.map((option) => (
-              <div key={product.id} className="pb-4">
+              <div key={option.id} className="pb-4">
                 <h2 className="font-medium uppercase">{option.displayName}</h2>
                 <div className="flex flex-row py-4">
                   {option.values.map((optValue) => (
