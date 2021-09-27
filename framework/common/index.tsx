@@ -9,7 +9,11 @@ interface ApiProviderProps {
 export const ApiContext = createContext({});
 
 export const ApiProvider = ({ children, config }: ApiProviderProps) => {
-  return <ApiContext.Provider value={config}>{children}</ApiContext.Provider>;
+  return (
+    <ApiContext.Provider value={{ ...config, testKey: 'TestKey' }}>
+      {children}
+    </ApiContext.Provider>
+  );
 };
 
 export const useApiProvider = () => {
