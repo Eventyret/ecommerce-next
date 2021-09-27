@@ -1,8 +1,10 @@
 import { useAddItem } from '@common/cart';
 
+export default useAddItem;
+
 export const handler = {
   fetcher: () => {
-    console.log('Fetching Data');
+    console.log('Fetching Data!');
   },
   useHook: () => {
     return (input: any) => {
@@ -12,4 +14,3 @@ export const handler = {
     };
   },
 };
-export default useAddItem;
