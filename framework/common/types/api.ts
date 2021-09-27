@@ -12,11 +12,20 @@ export type Variables = { [key: string]: string | undefined };
 
 export interface ApiConfig {
   apiURL: string;
-  fetch<T>(options: ApiFetchOptions): Promise<ApiFetchResults<T>>;
+  fetch: ApiFetch;
 }
 
 export interface ApiHooks {
   cart: {
     useAddItem: any;
   };
+}
+
+export type ApiFetch<T = any> = (
+  options: ApiFetchOptions
+) => Promise<ApiFetchResults<T>>;
+
+export interface ApiProviderContext {
+  hooks: ApiHooks;
+  fetch: ApiFetch;
 }
