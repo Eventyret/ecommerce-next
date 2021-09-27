@@ -8,7 +8,11 @@ const config = getConfig();
 export const ApiContext = createContext({});
 
 export const ApiProvider = ({ children }: ApiProviderProps) => {
-  return <ApiContext.Provider value={config}>{children}</ApiContext.Provider>;
+  return (
+    <ApiContext.Provider value={{ ...config, testKey: 'testValue' }}>
+      {children}
+    </ApiContext.Provider>
+  );
 };
 
 export const useApiProvider = () => {
