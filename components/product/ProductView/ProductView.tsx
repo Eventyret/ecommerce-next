@@ -1,15 +1,13 @@
-import cn from 'classnames';
-import { FC, useState } from 'react';
-import s from './ProductView.module.css';
-import { Container } from '@components/ui';
-import Image from 'next/image';
 import { Product } from '@common/types/product';
 import { ProductSlider, Swatch } from '@components/product';
-import { Button } from '@components/ui';
-import { Choices, getVariant } from '../helpers';
+import { Button, Container } from '@components/ui';
 import { useUI } from '@components/ui/context';
 import useAddItem from '@framework/cart/use-add-item';
-import { useApiProvider } from '@common';
+import cn from 'classnames';
+import Image from 'next/image';
+import { FC, useState } from 'react';
+import { Choices, getVariant } from '../helpers';
+import s from './ProductView.module.css';
 
 interface Props {
   product: Product;
@@ -17,7 +15,6 @@ interface Props {
 
 const ProductView: FC<Props> = ({ product }) => {
   const [choices, setChoices] = useState<Choices>({});
-  const { hooks, fetch } = useApiProvider();
   const variant = getVariant(product, choices);
   const { openSidebar } = useUI();
   const addItem = useAddItem();
