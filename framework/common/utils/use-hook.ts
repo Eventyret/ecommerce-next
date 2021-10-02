@@ -7,13 +7,13 @@ export const useHook = (fn: (apiHooks: ApiHooks) => MutationHook) => {
   return fn(hooks);
 };
 
-export const useMutationHook = (hook: MutationHook) => {
-  return hook.useHook({
+export const useMutationHook = (context: MutationHook) => {
+  return context.useHook({
     fetch: (input: any) => {
-      return hook.fetch({
+      return context.fetch({
         input,
-        fetch: (input: any) => {
-          return JSON.stringify(input) + '_MODIFIED';
+        fetch: async (input: any) => {
+          return { data: JSON.stringify(input) + '_MODIFIED' };
         },
       });
     },
