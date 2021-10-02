@@ -10,7 +10,6 @@ export type ApiFetchOptions = {
 export type Variables = { [key: string]: string | undefined };
 
 export interface ApiConfig {
-  apiURL: string;
   fetch: ApiFetch;
 }
 
