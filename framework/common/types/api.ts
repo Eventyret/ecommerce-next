@@ -7,7 +7,7 @@ export type ApiFetchOptions = {
   variables?: Variables;
 };
 
-export type Variables = { [key: string]: string | undefined };
+export type Variables = { [key: string]: string | any | undefined };
 
 export interface ApiConfig {
   fetch<T>(options: ApiFetchOptions): Promise<ApiFetchResults<T>>;

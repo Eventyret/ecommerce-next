@@ -12,7 +12,7 @@ export const ApiContext = createContext<Partial<ApiProviderContext>>({});
 export const ApiProvider = ({ children, config, hooks }: ApiProviderProps) => {
   const coreConfig = useMemo(() => {
     return {
-      fetcher: config.apiURL,
+      fetch: config.fetch,
       hooks,
     };
   }, [config.fetch, hooks]);

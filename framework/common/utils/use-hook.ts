@@ -7,13 +7,15 @@ export const useHook = (fn: (apiHooks: ApiHooks) => MutationHook) => {
   return fn(hooks);
 };
 
-export const useMutationHook = (context: MutationHook) => {
+export const useMutationHook = (hook: MutationHook) => {
   const { fetch } = useApiProvider();
-  return context.useHook({
+
+  return hook.useHook({
     fetch: (input: any) => {
-      return context.fetch({
+      return hook.fetch({
         input,
-        fetch,
+        fetch: fetch,
+        options: hook.fetchOptions,
       });
     },
   });
