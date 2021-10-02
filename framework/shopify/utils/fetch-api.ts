@@ -1,11 +1,11 @@
 import { ApiFetchOptions, ApiFetchResults } from '@common/types/api';
+import { API_URL } from '@framework/const';
 
 const fetchAPI = async <T>({
-  url,
   query,
   variables,
 }: ApiFetchOptions): Promise<ApiFetchResults<T>> => {
-  const response = await fetch(url, {
+  const response = await fetch(API_URL!, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
